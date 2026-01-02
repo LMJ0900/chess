@@ -1,0 +1,10 @@
+.error {
+    margin-top: 8px;
+    color: red;
+}
+
+/* 노트북 */
+@media (min-width: 768px) and (max-width: 1400px) {}
+
+/* 모바일 */
+@media (max-width: 767px) {}
