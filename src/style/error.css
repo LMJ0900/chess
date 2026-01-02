@@ -1,0 +1,35 @@
+.root {
+  width: 100%;
+  height: calc(var(--vh, 1vh) * 100);
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-size: 1.875rem;
+  font-weight: 600;
+}
+
+.content {
+  margin-top: 40px;
+  font-size: 1rem;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.image {
+  margin-top: 60px;
+}
+
+.homeLink,
+.retryBtn {
+  margin-top: 80px;
+  color: var(--black);
+  background-color: var(--R700);
+  font-weight: 500;
+  font-size: 0.875rem;
+  padding: 12px 16px;
+  border-radius: 8px;
+}

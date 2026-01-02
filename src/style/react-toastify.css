@@ -1,0 +1,15 @@
+.Toastify__toast {
+  font-size: 0.875rem;
+  line-height: 1.25;
+  word-break: keep-all;
+  color: var(--gray700);
+}
+
+.Toastify__toast-container {
+  z-index: 1000000;
+}
+
+.Toastify__toast-body {
+  white-space: pre-line;
+  align-items: flex-start;
+}

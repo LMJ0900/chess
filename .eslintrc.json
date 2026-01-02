@@ -1,3 +1,94 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "project": "tsconfig.json",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "node": true,
+    "browser": true
+  },
+  "extends": ["plugin:prettier/recommended"],
+  "plugins": [
+    "@typescript-eslint/eslint-plugin",
+    "import"
+  ],
+  "ignorePatterns": [".eslintrc"],
+  "rules": {
+    "@typescript-eslint/no-unused-vars": ["error", { "ignoreRestSiblings": true }],
+    "react/react-in-jsx-scope": "off",
+    "import/order": [
+      "warn",
+      {
+        "newlines-between": "always",
+        "groups": ["builtin", "external", "internal", "type"],
+        "pathGroupsExcludedImportTypes": ["builtin"],
+        "pathGroups": [
+          {
+            "pattern": "react*",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "{next*,next/*}",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "@/public/**",
+            "group": "external",
+            "position": "after"
+          },
+          {
+            "pattern": "@/api/**",
+            "group": "external",
+            "position": "after"
+          },
+          {
+            "pattern": "@/constant/**",
+            "group": "external",
+            "position": "after"
+          },
+          {
+            "pattern": "@/app/**",
+            "group": "external",
+            "position": "after"
+          },
+          {
+            "pattern": "@/component/**",
+            "group": "external",
+            "position": "after"
+          },
+          {
+            "pattern": "@/hook/**",
+            "group": "external",
+            "position": "after"
+          },
+          {
+            "pattern": "@/provider/**",
+            "group": "external",
+            "position": "after"
+          },
+          {
+            "pattern": "@/util/**",
+            "group": "external",
+            "position": "after"
+          },
+          {
+            "pattern": "@/i18n/**",
+            "group": "external",
+            "position": "after"
+          }
+        ],
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ]
+  }
 }
