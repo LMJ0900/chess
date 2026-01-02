@@ -1,3 +1,31 @@
 .root {
-  
+    width: 455px;
+    height: 600px;
+    padding: 24px 60px;
+    background-color: gray;
+    color: white;
+    border-radius: 20px;
 }
+
+.title {
+    font-size: 40px;
+    color: black;
+    margin-top: 46px;
+    margin-bottom: 24px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.submitBtn{
+    margin-top: 65px 
+}
+
+/* 노트북 */
+@media (min-width: 768px) and (max-width: 1400px) {}
+
+/* 모바일 */
+@media (max-width: 767px) {}
