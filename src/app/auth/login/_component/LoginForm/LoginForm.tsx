@@ -3,6 +3,10 @@
 import { useForm } from 'react-hook-form';
 
 import { classValidatorResolver } from '@hookform/resolvers/class-validator';
+import { useMutation } from '@tanstack/react-query';
+
+import { AuthMutation } from '@/api/domain/auth/Auth.mutaion';
+import { SignInReq } from '@/api/domain/auth/request/SignInReq';
 
 import ActionButton from '@/app/(main)/_component/ActionButton';
 import { LoginInputModel } from '@/app/auth/login/_component/LoginForm/model/LoginInputModel';
@@ -28,8 +32,13 @@ export default function LoginForm({}: Props) {
     resolver: classValidatorResolver(LoginInputModel),
   });
 
+  const { mutate } = useMutation({
+    mutationFn: (req: SignInReq) => AuthMutation.signIn(req),
+  });
+
   const onSubmit = (data: LoginInputModel) => {
-    console.log('submit:', data);
+    const req = SignInReq.of({ email: data.email, password: data.password });
+    mutate(req);
   };
 
   return (
