@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { UseFormRegisterReturn } from 'react-hook-form';
 
 import { bindClassNames } from '@/util/BindClassName';
@@ -20,11 +21,28 @@ type Props = {
 };
 
 export default function InputBox({ label, inputId, inputType, placeholder, inputRegisterReturn, errorMessage }: Props) {
+  const [isFocused, setIsFocused] = useState(false);
+
+  const handleFocus = () => {
+    setIsFocused(true);
+  };
+
+  const handleBlur = () => {
+    setIsFocused(false);
+  };
   return (
     <div>
       <div className={cx('root')}>
         <div className={cx('label')}>{label}</div>
-        <input className={cx('box')} id={inputId} {...inputRegisterReturn} type={inputType} placeholder={placeholder} />
+        <input
+          className={cx('box', isFocused && 'focus', errorMessage && 'error')}
+          id={inputId}
+          {...inputRegisterReturn}
+          type={inputType}
+          placeholder={placeholder}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+        />
       </div>
       <InputErrorMessage errorMessage={errorMessage} />
     </div>

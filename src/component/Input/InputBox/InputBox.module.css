@@ -14,7 +14,16 @@
     height: 40px;
     padding: 12px 16px;
     background-color: white;
+    border-radius: 10px;
     color: black;
+}
+
+.box.focus {
+    border: 1px solid blue;
+}
+
+.box.error {
+    border: 1px solid red;
 }
 
 .box::placeholder{
