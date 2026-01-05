@@ -20,6 +20,10 @@ export default function StartSection({}: Props) {
     router.push('/auth/login');
   };
 
+  const handleRegister = () => {
+    router.push('/auth/application');
+  };
+
   return (
     <div className={cx('root')}>
       <Image className={cx('background')} src="/images/startBack.png" width={2000} height={2000} alt="배경이미지" />
@@ -30,7 +34,7 @@ export default function StartSection({}: Props) {
         </div>
         <div className={cx('btnBox')}>
           <ActionButton label="Login" onClick={handleLogin} />
-          <ActionButton className={cx('join')} label="Create an account" onClick={handleLogin} />
+          <ActionButton className={cx('join')} label="Create an account" onClick={handleRegister} />
         </div>
       </div>
     </div>
